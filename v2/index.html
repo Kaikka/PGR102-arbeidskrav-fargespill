@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>World of Colorcraft</title>
+    </head>
+    <body style="padding-left: 10px;">
+        <h1>Game of Colors v.2</h1>
+        <input id="difficultyInput" value="" type="number" min="2" placeholder="Difficulty value" onfocus="clearInterval(interval)"><input id="changeDifficultyBtn" type="button" value="Change difficulty!" onclick="changeDifficulty()"><span id="difficultyError"></span>
+        <div>
+            <table style="text-align: left;">
+                <tr><td>Current difficulty:</td><td id="difficultyOutput"></td></tr>
+            </table>
+        </div><br/>
+
+        <div id="correctBoxDiv"></div><br/><br/>
+
+        <!-- div with set height to make it not move elements below up and down when content changes -->
+        <div id="infoTextDiv" style="height: 80px;">
+            Hello and welcome to this little game of colors!<br/>
+            The game is simple; click the box below that matches the color of the box above.<br/>
+            After the first answer you have <strong>3</strong> seconds per color.<br/>
+            The goal is to get as many correct answers as possible in 20 attempts! 
+        </div>
+        
+        <!-- 1040px to limit 10 altneratives per row, 100px width, 2px margin per box, 104px * 10 -->
+        <div id="alternativesDiv" style="max-width: 1040px; min-height: 108px;"></div>
+
+        <br/>
+        <div id="nextColorBar"></div>
+        <div id="nextColorBarTimer">&nbsp;</div><!-- &nbsp; to make it use space while 'empty' -->
+        <br/>
+        <div>
+            <!-- Table to make alignment perfect -->
+            <table style="text-align: left;"> 
+                <tr><td>Correct answers:</td><td id="correctAnswers">0</td></tr>
+                <tr><td>Wrong answers:</td><td id="wrongAnswers">0</td></tr>
+                <tr><td>Attempts left:</td><td id="attemptsLeft">20</td></tr>
+            </table>
+        </div>
+
+        <script src="index.js"></script>
+    </body>
+</html>
